@@ -4,7 +4,7 @@
   "description": "내가 쓰려고 베란다에서 만든 도구들",
   "start_url": "./",
   "scope": "./",
-  "display": "standalone",
+  "display": "browser",
   "background_color": "#F1F4F1",
   "theme_color": "#F1F4F1",
   "lang": "ko",
@@ -27,6 +27,5 @@
       "type": "image/png",
       "purpose": "maskable"
     }
-  ],
-  "id": "./"
+  ]
 }

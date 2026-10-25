@@ -325,25 +325,6 @@ a:hover{filter:brightness(0.92)}
 <img src="assets/qr-showcase.svg" alt="쇼케이스 페이지 QR 코드 (lloydknam.github.io/showcase)" width="180" height="180" style="display: block; width: 180px; height: 180px">
 <figcaption><a href="https://lloydknam.github.io/showcase/" style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #3F5248" target="_blank" rel="noopener noreferrer">lloydknam.github.io/showcase</a></figcaption>
 </figure>
-<div id="a2hs" style="display: flex; flex-direction: column; align-items: center; gap: 10px">
-<button id="a2hsBtn" type="button" style="display: inline-flex; align-items: center; justify-content: center; min-height: 48px; padding: 0 22px; border: 0; border-radius: 999px; background: #1F6B4F; color: #FFFFFF; font: inherit; font-size: 16px; font-weight: 700; cursor: pointer">📲 홈 화면에 바로가기 추가</button>
-<p id="a2hsMsg" style="margin: 0; max-width: 340px; font-size: 14px; line-height: 1.55; color: #3F5248" hidden></p>
-</div>
-<script>
-(function(){
-var btn=document.getElementById("a2hsBtn"),msg=document.getElementById("a2hsMsg"),box=document.getElementById("a2hs"),dp=null;
-if(window.matchMedia("(display-mode: standalone)").matches||navigator.standalone){box.hidden=true;return}
-if("serviceWorker" in navigator){navigator.serviceWorker.register("sw.js").catch(function(){})}
-window.addEventListener("beforeinstallprompt",function(e){e.preventDefault();dp=e});
-window.addEventListener("appinstalled",function(){msg.hidden=false;msg.textContent="홈 화면에 추가했어요!";btn.hidden=true});
-btn.addEventListener("click",function(){
- if(dp){dp.prompt();dp.userChoice.finally(function(){dp=null});return}
- var ios=/iphone|ipad|ipod/i.test(navigator.userAgent);
- msg.hidden=false;
- msg.textContent=ios?"아이폰·아이패드는 사파리 하단의 공유 버튼(□↑)을 누르고 '홈 화면에 추가'를 선택해 주세요.":"크롬 오른쪽 위 메뉴(⋮)에서 '홈 화면에 추가' 또는 '앱 설치'를 선택해 주세요.";
-});
-})();
-</script>
 </footer>
 
 </div>
