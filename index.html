@@ -23,8 +23,10 @@ a:hover{filter:brightness(0.92)}
 .card .btns{flex:none !important}
 }
 @media (max-width:640px){
-.list{display:grid !important;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px !important;padding-bottom:48px !important}
-.card{flex-direction:column !important;flex-wrap:nowrap !important;align-items:stretch !important;gap:10px !important;padding:10px !important;border-radius:14px !important}
+.wrap{padding:0 6px !important}
+.list{display:grid !important;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px !important;padding-bottom:24px !important}
+.card{flex-direction:column !important;flex-wrap:nowrap !important;align-items:stretch !important;gap:6px !important;padding:6px !important;border-radius:12px !important}
+.card .body{padding:0 2px 2px}
 .card .thumb{flex:none !important;width:100% !important;min-width:0 !important;height:auto !important;aspect-ratio:240/150;border-radius:9px !important}
 .card .body{flex:1 1 auto !important;gap:5px !important}
 .card .body > div:first-child{gap:5px !important}
@@ -35,7 +37,8 @@ a:hover{filter:brightness(0.92)}
 .card p{font-size:13px !important;line-height:1.45 !important}
 .card .btns{flex-direction:column !important;flex-wrap:nowrap !important;gap:6px !important}
 .card .btns a{width:100%;box-sizing:border-box;min-height:44px !important;padding:0 8px !important;font-size:14px !important}
-.top{padding:28px 0 24px !important;gap:14px !important}
+.top{padding:16px 4px 14px !important;gap:10px !important}
+.wrap footer{padding:16px 4px 28px !important}
 .brand{flex-wrap:nowrap !important;gap:12px !important}
 .brand img{width:56px !important;height:56px !important}
 .brand h1{font-size:6.2vw !important;white-space:nowrap}
@@ -45,7 +48,7 @@ a:hover{filter:brightness(0.92)}
 </head>
 <body>
 <div style="min-height: 100%; background: #F1F4F1; display: flex; flex-direction: column; align-items: center">
-<div style="width: 100%; max-width: 1120px; box-sizing: border-box; padding: 0 16px; display: flex; flex-direction: column">
+<div class="wrap" style="width: 100%; max-width: 1120px; box-sizing: border-box; padding: 0 16px; display: flex; flex-direction: column">
 
 <!-- 헤더 -->
 <header class="top" style="padding: 56px 0 40px; display: flex; flex-direction: column; gap: 20px">
