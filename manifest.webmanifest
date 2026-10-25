@@ -1,0 +1,31 @@
+{
+  "name": "Lloyd's balcony lab",
+  "short_name": "balcony lab",
+  "description": "내가 쓰려고 베란다에서 만든 도구들",
+  "start_url": "./",
+  "scope": "./",
+  "display": "browser",
+  "background_color": "#F1F4F1",
+  "theme_color": "#F1F4F1",
+  "lang": "ko",
+  "icons": [
+    {
+      "src": "assets/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "assets/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ]
+}
