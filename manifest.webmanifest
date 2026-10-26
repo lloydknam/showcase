@@ -1,7 +1,7 @@
 {
   "name": "Lloyd's balcony lab",
   "short_name": "balcony lab",
-  "description": "내가 쓰려고 베란다에서 만든 도구들",
+  "description": "내가 쓰려고 베란다에서 만든 실험들",
   "start_url": "./",
   "scope": "./",
   "display": "standalone",
