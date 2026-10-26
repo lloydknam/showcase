@@ -40,10 +40,12 @@ a:hover{filter:brightness(0.92)}
 .list{display:grid !important;grid-template-columns:repeat(2,minmax(0,1fr));gap:6px !important;padding-bottom:24px !important}
 .card{flex-direction:column !important;flex-wrap:nowrap !important;align-items:stretch !important;gap:6px !important;padding:6px !important;border-radius:12px !important}
 .card .body{padding:0 2px 2px}
-.card .thumb{flex:none !important;width:100% !important;min-width:0 !important;height:auto !important;aspect-ratio:240/150;border-radius:9px !important}
+.card .thumb{flex:none !important;width:100% !important;min-width:0 !important;height:auto !important;aspect-ratio:560/323;border-radius:9px !important}
 .card .body{flex:1 1 auto !important;gap:5px !important}
 .card .body > div:first-child{gap:5px !important}
-.card .body > div:first-child span{font-size:11px !important;padding:2px 7px !important}
+.card .body > div:first-child > span{font-size:11px !important}
+.card .body > div:first-child > span:first-child{padding:2px 7px !important}
+.card .body > div:first-child > span > span{flex:none}
 .card .rank{font-size:22px !important;min-width:32px !important;padding:1px 8px 3px !important;border-radius:0 0 10px 0 !important}
 .card h2{font-size:16px !important;line-height:1.3}
 .card .repo{font-size:11px !important;overflow-wrap:anywhere}
@@ -354,12 +356,15 @@ a:hover{filter:brightness(0.92)}
 <div class="install-help" id="installHelp" role="status" aria-live="polite" hidden></div>
 
 <!-- 푸터 -->
-<footer style="border-top: 1px solid #D5DED8; padding: 28px 0 56px; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; gap: 24px">
-<a href="https://github.com/lloydknam" style="display: inline-block" target="_blank" rel="noopener noreferrer"><img src="assets/lockup-light.svg" alt="Lloyd's balcony lab · with claude · GitHub(@lloydknam)" style="width: 339px; max-width: 100%; height: auto; display: block"></a>
-<figure style="margin: 0; display: flex; flex-direction: column; align-items: center; gap: 8px">
-<img src="assets/qr-showcase.svg" alt="쇼케이스 페이지 QR 코드 (lloydknam.github.io/showcase)" width="180" height="180" style="display: block; width: 180px; height: 180px">
+<footer style="padding: 8px 0 56px; display: flex; justify-content: center">
+<div class="credit" style="box-sizing: border-box; width: 100%; max-width: 420px; background: #FFFFFF; border: 1px solid #D5DED8; border-radius: 16px; padding: 24px 20px; display: flex; flex-direction: column; align-items: center; text-align: center; gap: 20px">
+<a href="https://github.com/lloydknam" style="display: inline-block; max-width: 100%" target="_blank" rel="noopener noreferrer"><img src="assets/lockup-light.svg" alt="Lloyd's balcony lab · with claude · GitHub(@lloydknam)" style="width: 339px; max-width: 100%; height: auto; display: block"></a>
+<div aria-hidden="true" style="width: 100%; height: 1px; background: #D5DED8"></div>
+<figure style="margin: 0; display: flex; flex-direction: column; align-items: center; gap: 10px">
+<img src="assets/qr-showcase.svg" alt="쇼케이스 페이지 QR 코드 (lloydknam.github.io/showcase)" width="160" height="160" style="display: block; width: 160px; height: 160px">
 <figcaption><a href="https://lloydknam.github.io/showcase/" style="font-family: 'JetBrains Mono', monospace; font-size: 13px; color: #3F5248" target="_blank" rel="noopener noreferrer">lloydknam.github.io/showcase</a></figcaption>
 </figure>
+</div>
 </footer>
 
 </div>
@@ -385,6 +390,8 @@ a:hover{filter:brightness(0.92)}
     counts[k]++;
   });
   box.textContent = '';
+  var known = Object.keys(palette).filter(function (k) { return k in counts; });
+  order = known.concat(order.filter(function (k) { return !(k in palette); }));
   order.forEach(function (k) {
     var c = palette[k] || ['#E4EAE6', '#26362E'];
     var s = document.createElement('span');
